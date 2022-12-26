@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // Person irina = new Person("Ирина");
-        Person vasya = new Person("Вася");
-        Person masha = new Person("Маша");
-        Person liza = new Person("Елизавета");
-        Person egor = new Person("Егор");
+        Person vasya = new Person("Вася", 120);
+        Person masha = new Person("Маша", 150);
+        Person liza = new Person("Елизавета", 130);
+        Person egor = new Person("Егор", 112);
 
         GeoTree gt = new GeoTree();
         // родитель - ребенок
@@ -37,6 +37,12 @@ public class Main {
         System.out.println();
         gt.print("fileGeoTree.txt");
         gt.read("fileGeoTree.txt");
+
+        System.out.println("Вывести на экран, кто выше из братьев и сестр Маши, чьи имена начинаются на Е:");
+        if (egor.compareTo(liza) > 0) {
+            System.out.println(egor.getFullName() + "выше ");
+        } else
+            System.out.println(liza.getFullName() + " выше ");
 
     }
 
